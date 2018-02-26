@@ -17,7 +17,7 @@ export class HomePage {
   ) {
     setInterval(() => {
       this.getJsonData();
-    },3000);
+    },2000);
   }
   getJsonData(){
     var thisPage=this;
