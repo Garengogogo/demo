@@ -1,11 +1,53 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+    <ion-title text-center>自选</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item style="background-color: #f00">
+      <div item-start style="width: 40%;">
+        产品ID
+      </div>
+      <p>买一价</p>
+      <p>买一量</p>
+      <div clear item-end style="width: 30%;">
+        <p>卖一价</p>
+        <p>卖一量</p>
+      </div>
+    </ion-item>
+    <div *ngIf="isFlag">
+    <ion-item *ngFor="let item of dataObj" >
 
+        <div item-start style="width: 40%;">
+          {{item.product_id}}
+        </div>
+        <p>{{item.bid_price.toFixed(2)}}</p>
+        <p>{{item.bid_quantity}}</p>
+        <div  clear item-end style="width: 30%;">
+          <p>{{item.ask_price.toFixed(2)}}</p>
+          <p>{{item.ask_quantity}}</p>
+        </div>
+
+
+    </ion-item>
+    </div>
+    <div *ngIf="!isFlag">
+    <ion-item >
+
+        <div item-start style="width: 40%;">
+          暂无
+        </div>
+        <p>0</p>
+        <p>0</p>
+        <div  clear item-end style="width: 30%;">
+          <p>0</p>
+          <p>0</p>
+        </div>
+
+
+    </ion-item>
+    </div>
+  </ion-list>
 </ion-content>
